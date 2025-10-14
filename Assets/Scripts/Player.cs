@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
     private Rigidbody rigidbody;
     private bool jumping;
     [SerializeField] private float jumpForce;
-    [SerializeField] private float velocity;
+    [SerializeField] private float velocity = 2;
     
 
     void Start()
@@ -29,12 +29,13 @@ public class Player : MonoBehaviour
         }
 
         float move = Input.GetAxis("Horizontal");
-        transform.Translate(Vector3.right * move * velocity * Time.deltaTime);
+        rigidbody.linearVelocity = new Vector3(move * velocity, rigidbody.linearVelocity.y, 0);
+        //Vector3.right * move * velocity;
     }
 
     void FixedUpdate()
     {
-        if (jumping)
+        if (jumping && Mathf.Abs(rigidbody.linearVelocity.y) < 0.05)
         {
             jumping = false;
             animator.SetBool("Jump", true);

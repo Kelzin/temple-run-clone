@@ -6,15 +6,24 @@ public class GenerateGround : MonoBehaviour
     [SerializeField] private GameObject[] groundPrefabs;
     [SerializeField] private GameObject spawnOrigin;
 
-    void CreateGround()
+    private bool hasSpawned = false;
+
+    void CreateGround(Collider other)
     {
-        int index = Random.Range(0, groundPrefabs.Length);
-        Instantiate(groundPrefabs[0], spawnOrigin.transform.position, Quaternion.identity);
+        if (other.CompareTag("Player") && !hasSpawned)
+        {
+            int index = Random.Range(0, groundPrefabs.Length);
+            Instantiate(groundPrefabs[0], spawnOrigin.transform.position, Quaternion.identity);
+            Debug.Log("Ground created Entered at " + spawnOrigin.transform.position.ToString());
+
+            Destroy(spawnOrigin);
+
+            hasSpawned = true;
+        }
     }
 
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Trigger Entered");
-        CreateGround();
+        CreateGround(other);
     }
 }
