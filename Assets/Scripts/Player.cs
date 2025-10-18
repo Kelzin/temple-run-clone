@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
 
         float move = Input.GetAxis("Horizontal");
         rigidbody.linearVelocity = new Vector3(move * velocity, rigidbody.linearVelocity.y, 0);
-        //Vector3.right * move * velocity;
+
     }
 
     void FixedUpdate()
@@ -66,4 +66,7 @@ public class Player : MonoBehaviour
             Destroy(other.gameObject);
         }
     }
+
+    
+
 }
