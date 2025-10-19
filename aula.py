@@ -1,4 +1,4 @@
-from random import randint
+dsafrom random import randint
 
 temas = [
     'MOVER CHÃO',

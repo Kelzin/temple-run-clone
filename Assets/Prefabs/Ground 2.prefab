@@ -333,6 +333,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle
       objectReference: {fileID: 0}
+    - target: {fileID: 3695611694877459704, guid: 6c12b135d350e1f4a944e872425a378e, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
+    - target: {fileID: 3755211630904028927, guid: 6c12b135d350e1f4a944e872425a378e, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 7101881957713961352, guid: 6c12b135d350e1f4a944e872425a378e, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.23043598

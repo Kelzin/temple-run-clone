@@ -5,6 +5,7 @@ public class Player : MonoBehaviour
     private Animator animator;
     private Rigidbody rigidbody;
     private bool jumping;
+    private bool sliding;
     [SerializeField] private float jumpForce;
     [SerializeField] private float velocity = 2;
     
@@ -47,12 +48,14 @@ public class Player : MonoBehaviour
     {
         animator.SetBool("Slide", true);
         transform.rotation = Quaternion.Euler(0, 90, 0);
+        sliding = true;
     }
 
     public void StopSlide()
     {
         animator.SetBool("Slide", false);
         transform.rotation = Quaternion.Euler(0, 0, 0);
+        sliding = false;
     }
 
     void OnTriggerEnter(Collider other)
@@ -67,6 +70,13 @@ public class Player : MonoBehaviour
         }
     }
 
-    
-
+    void OnCollisionEnter(Collision other)
+    {
+        Debug.Log("Fuck you");
+        if (other.gameObject.CompareTag("Obstacle"))
+        {
+            Time.timeScale = 0;
+            Debug.Log("You lost the game");
+        }
+    }
 }
