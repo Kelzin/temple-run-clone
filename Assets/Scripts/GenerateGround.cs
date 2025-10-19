@@ -5,15 +5,15 @@ public class GenerateGround : MonoBehaviour
 
     [SerializeField] private GameObject[] groundPrefabs;
     [SerializeField] private GameObject spawnOrigin;
+    private int index;
 
     private bool hasSpawned = false;
 
-    void CreateGround(Collider other)
+    void CreateGround(Collider other, int index)
     {
         if (other.CompareTag("Player") && !hasSpawned)
         {
-            int index = Random.Range(0, groundPrefabs.Length);
-            Instantiate(groundPrefabs[0], spawnOrigin.transform.position, Quaternion.identity);
+            Instantiate(groundPrefabs[index], spawnOrigin.transform.position, Quaternion.identity);
             Debug.Log("Ground created Entered at " + spawnOrigin.transform.position.ToString());
 
             Destroy(spawnOrigin);
@@ -24,6 +24,6 @@ public class GenerateGround : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        CreateGround(other);
+        CreateGround(other,index = Random.Range(0, groundPrefabs.Length));
     }
 }

@@ -8,7 +8,7 @@ public class ObstacleController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        InvokeRepeating("Obstacle", 5f,5f);
+        //InvokeRepeating("Obstacle", 5f,5f);
     }
 
     // Update is called once per frame
