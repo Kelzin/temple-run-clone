@@ -224,6 +224,12 @@ MonoBehaviour:
   - {fileID: 1454650185816076064, guid: 650ce827ec5ff0441ab88744ded8424c, type: 3}
   - {fileID: 1454650185816076064, guid: 7fa6a628ac61bbd46891a6456384ac38, type: 3}
   - {fileID: 1454650185816076064}
+  - {fileID: 1454650185816076064, guid: 4b649461f04186540b912f64d8db066e, type: 3}
+  - {fileID: 1454650185816076064, guid: d8cb7c45a6b5cb44d98eb897a6620a3f, type: 3}
+  - {fileID: 1454650185816076064, guid: 7443667ef62610b4db4c008bce33bfdc, type: 3}
+  - {fileID: 1454650185816076064, guid: 1af3d8ae8a0937f49995a4bfce78b2d5, type: 3}
+  - {fileID: 1454650185816076064, guid: 8ac5df3080149d94b8697b388b3d8ce9, type: 3}
+  - {fileID: 1454650185816076064, guid: 431596c5fa86c254c9141a6c424498f1, type: 3}
   spawnOrigin: {fileID: 4244948088738151521}
 --- !u!1 &4244948088738151521
 GameObject:
@@ -319,6 +325,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5212843357457757119}
     m_Modifications:
+    - target: {fileID: 1708741126479752567, guid: 6c12b135d350e1f4a944e872425a378e, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: ddc597c09bd34704eaad74a13d56c03d, type: 2}
     - target: {fileID: 3695611694877459704, guid: 6c12b135d350e1f4a944e872425a378e, type: 3}
       propertyPath: m_Name
       value: Obstacle
