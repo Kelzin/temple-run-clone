@@ -719,7 +719,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 833624560}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 10
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -736,7 +736,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 1
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 1
 --- !u!136 &833624565
 CapsuleCollider:
@@ -792,9 +792,10 @@ GameObject:
   m_Component:
   - component: {fileID: 855896740}
   - component: {fileID: 855896741}
+  - component: {fileID: 855896742}
   m_Layer: 0
   m_Name: RightBox
-  m_TagString: Untagged
+  m_TagString: WallR
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -835,6 +836,27 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.0113089, y: 3.6801355, z: 1.4057364}
   m_Center: {x: 2.8673158, y: 1.3400677, z: 0.20286822}
+--- !u!65 &855896742
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 855896739}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.4630165, y: 5.45447, z: 1}
+  m_Center: {x: 2.2900667, y: 2.227236, z: 0}
 --- !u!1 &1124567935
 GameObject:
   m_ObjectHideFlags: 0
@@ -889,9 +911,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1174253731}
   - component: {fileID: 1174253732}
+  - component: {fileID: 1174253733}
   m_Layer: 0
   m_Name: LeftBox
-  m_TagString: Untagged
+  m_TagString: WallL
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -932,6 +955,27 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.7471521, y: 3.6801355, z: 1.4057364}
   m_Center: {x: -0.07627523, y: 1.3400677, z: 0.20286822}
+--- !u!65 &1174253733
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1174253730}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.1388235, y: 6.1164813, z: 1}
+  m_Center: {x: 0.069411755, y: 2.5582407, z: 0}
 --- !u!1001 &1180921095
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1018,8 +1062,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7439755002204de78182b3c4637fc59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacleUp: {fileID: 0}
-  obstacleDown: {fileID: 0}
+  obstacleUp: {fileID: 3695611694877459704, guid: 6c12b135d350e1f4a944e872425a378e, type: 3}
+  obstacleDown: {fileID: 3695611694877459704, guid: 6c12b135d350e1f4a944e872425a378e, type: 3}
 --- !u!4 &2010100598
 Transform:
   m_ObjectHideFlags: 0
