@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4.3396, y: 1, z: 14.524632}
+  m_LocalScale: {x: 5, y: 1, z: 16}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4215761014974127129}
@@ -154,8 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cabcb52ef7aa44d48c9e19c4188188a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EraseGround: 0
-  moveSpeed: 0
+  moveSpeed: 10
 --- !u!1 &3055800438532609159
 GameObject:
   m_ObjectHideFlags: 0
@@ -222,17 +221,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4d8ecd560e4c46a1ad6fd6cb58dedce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groundPrefabs:
-  - {fileID: 1454650185816076064, guid: 650ce827ec5ff0441ab88744ded8424c, type: 3}
-  - {fileID: 1454650185816076064, guid: 7fa6a628ac61bbd46891a6456384ac38, type: 3}
-  - {fileID: 1454650185816076064, guid: 83a231c52f01ffb468715cc06271b01f, type: 3}
-  - {fileID: 1454650185816076064, guid: 4b649461f04186540b912f64d8db066e, type: 3}
-  - {fileID: 1454650185816076064, guid: d8cb7c45a6b5cb44d98eb897a6620a3f, type: 3}
-  - {fileID: 1454650185816076064}
-  - {fileID: 1454650185816076064, guid: 1af3d8ae8a0937f49995a4bfce78b2d5, type: 3}
-  - {fileID: 1454650185816076064, guid: 8ac5df3080149d94b8697b388b3d8ce9, type: 3}
-  - {fileID: 1454650185816076064, guid: 431596c5fa86c254c9141a6c424498f1, type: 3}
-  spawnOrigin: {fileID: 4244948088738151521}
+  spawnPivot: {fileID: 4244948088738151521}
 --- !u!1 &4244948088738151521
 GameObject:
   m_ObjectHideFlags: 0
@@ -260,7 +249,7 @@ Transform:
   m_GameObject: {fileID: 4244948088738151521}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.5}
   m_LocalScale: {x: 0.23043598, y: 1, z: 0.06884855}
   m_ConstrainProportionsScale: 0
   m_Children: []
