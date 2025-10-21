@@ -2,21 +2,18 @@ using UnityEngine;
 
 public class GenerateGround : MonoBehaviour
 {
-
-    [SerializeField] private GameObject[] groundPrefabs;
-    [SerializeField] private GameObject spawnOrigin;
-    private int index;
+    [SerializeField] private GameObject spawnPivot;
 
     private bool hasSpawned = false;
 
-    void CreateGround(Collider other, int index)
+    void CreateGround(Collider other)
     {
         if (other.CompareTag("Player") && !hasSpawned)
         {
-            Instantiate(groundPrefabs[index], spawnOrigin.transform.position, Quaternion.identity);
-            Debug.Log("Ground created Entered at " + spawnOrigin.transform.position.ToString());
+            GroundController.Instance.CreateGround(spawnPivot);
+            //Debug.Log("Ground created Entered at " + spawnPivot.transform.position.ToString());
 
-            Destroy(spawnOrigin);
+            Destroy(spawnPivot);
 
             hasSpawned = true;
         }
@@ -24,6 +21,6 @@ public class GenerateGround : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        CreateGround(other,index = Random.Range(0, groundPrefabs.Length));
+        CreateGround(other);
     }
 }
