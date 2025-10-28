@@ -10,6 +10,6 @@ public class GameOver : MonoBehaviour
 
     public void TryAgain()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("Game Fixing");
     }
 }

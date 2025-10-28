@@ -2,6 +2,7 @@ using System.Numerics;
 using UnityEngine;
 using Quaternion = UnityEngine.Quaternion;
 using Vector3 = UnityEngine.Vector3;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class Player : MonoBehaviour
         jumping = false;
         animator = GetComponent<Animator>();
         rigidbody = GetComponent<Rigidbody>();
+        Time.timeScale = 1f;
     }
 
     void Update()
@@ -105,6 +107,7 @@ public class Player : MonoBehaviour
         if (other.gameObject.CompareTag("Obstacle"))
         {
             Time.timeScale = 0;
+            SceneManager.LoadScene("GameOver");
             Debug.Log("You lost the game");
         }
     }
