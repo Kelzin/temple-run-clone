@@ -11,6 +11,8 @@ public class GroundController : MonoBehaviour
     
     [SerializeField] private GameObject[] groundPrefabs;
     
+    [SerializeField] private GameObject groundGroup;
+    
     void Awake()
     {
         if (_instance != null && _instance != this)
@@ -25,6 +27,10 @@ public class GroundController : MonoBehaviour
     {
         int index = Random.Range(0, groundPrefabs.Length);
         // Do some funky logic here to figure out the next ground
-        Instantiate(groundPrefabs[index], pivot.transform.position + pivot.transform.forward * groundLength/2, pivot.transform.rotation);
+        Instantiate(
+            groundPrefabs[index], 
+            pivot.transform.position + pivot.transform.forward * groundLength/2,
+            pivot.transform.rotation,
+            groundGroup.transform);
     }
 }
