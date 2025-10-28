@@ -4,7 +4,10 @@ public class AudioController : MonoBehaviour
 
 {
 
+    public GameObject Mortis;
+    public GameObject Jump;
     public static AudioController instance;
+    
 
     private void Awake()
     {
@@ -18,14 +21,6 @@ public class AudioController : MonoBehaviour
         }
     }
 
-    
-    public void PlayAudioClip(AudioClip sound, bool loop)
-    {
-        soundSource.clip = sound;
-        soundSource.loop = loop;
-        soundSource.Play();
-    }
-    
     void Start()
     {
         
@@ -33,6 +28,11 @@ public class AudioController : MonoBehaviour
 
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+          Jump.SetActive(false);
+          Jump.SetActive(true);
+        }
+
     }
 }
