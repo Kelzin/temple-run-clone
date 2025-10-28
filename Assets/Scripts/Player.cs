@@ -1,4 +1,7 @@
+using System.Numerics;
 using UnityEngine;
+using Quaternion = UnityEngine.Quaternion;
+using Vector3 = UnityEngine.Vector3;
 
 public class Player : MonoBehaviour
 {
@@ -6,8 +9,10 @@ public class Player : MonoBehaviour
     private Rigidbody rigidbody;
     private bool jumping;
     private bool sliding;
-    [SerializeField] private float jumpForce;
+    private GameObject lastGroundPivot;
+    [SerializeField] private float jumpForce;   
     [SerializeField] private float velocity = 2;
+    [SerializeField] private GameObject groundGroup;
     
 
     void Start()
@@ -29,6 +34,15 @@ public class Player : MonoBehaviour
             Slide();
         }
 
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            RotateThings((float) -90.0, lastGroundPivot.transform.position);
+        }
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            RotateThings((float) 90.0, lastGroundPivot.transform.position);
+        }
+
         float move = Input.GetAxis("Horizontal");
         rigidbody.linearVelocity = new Vector3(move * velocity, rigidbody.linearVelocity.y, 0);
 
@@ -42,6 +56,17 @@ public class Player : MonoBehaviour
             animator.SetBool("Jump", true);
             rigidbody.linearVelocity = Vector3.up * jumpForce;
         }
+    }
+
+    void RotateThings(float rotation, Vector3 pivot)
+    {
+        for (int i = 0; i < groundGroup.transform.childCount; i++)
+        {
+            Transform child = groundGroup.transform.GetChild(i);
+            child.RotateAround(pivot, Vector3.up, rotation);
+        }
+
+        lastGroundPivot = null;
     }
 
     public void Slide()
@@ -68,11 +93,15 @@ public class Player : MonoBehaviour
         {
             Destroy(other.gameObject);
         }
+
+        if (other.CompareTag("Rotate"))
+        {
+            lastGroundPivot = other.gameObject;
+        }
     }
 
     void OnCollisionEnter(Collision other)
     {
-        Debug.Log("Fuck you");
         if (other.gameObject.CompareTag("Obstacle"))
         {
             Time.timeScale = 0;
